@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= I18n.t('activerecord.attributes.sale.purchaser_id') %></strong>
+  <%= @sale.provider.name %>
+</p>
+
+<p>
+  <strong><%= I18n.t('activerecord.attributes.sale.product_id') %></strong>
+  <%= @sale.product.description %>
+</p>
+
+<p>
+  <strong><%= I18n.t('activerecord.attributes.sale.quantity') %></strong>
+  <%= @sale.quantity %>
+</p>
+
+<p>
+  <strong><%= I18n.t('activerecord.attributes.sale.address_id') %></strong>
+  <%= @sale.provider.address.street %>
+</p>
+
+<p>
+  <strong><%= I18n.t('activerecord.attributes.sale.provider_id') %></strong>
+  <%= @sale.provider.name %>
+</p>
+
+<%= link_to 'Voltar', sales_path %>

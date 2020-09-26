@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= I18n.t('activerecord.models.sale.other') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= I18n.t('activerecord.attributes.sale.purchaser_id') %></th>
+      <th><%= I18n.t('activerecord.attributes.sale.product_id') %></th>
+      <th><%= I18n.t('activerecord.attributes.sale.quantity') %></th>
+      <th><%= I18n.t('activerecord.attributes.sale.address_id') %></th>
+      <th><%= I18n.t('activerecord.attributes.sale.provider_id') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.purchaser.name %></td>
+        <td><%= sale.product.description %></td>
+        <td><%= sale.quantity %></td>
+        <td><%= sale.provider.address.street  %></td>
+        <td><%= sale.provider.name  %></td>
+        <td><%= link_to 'Visualizar', sale %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
