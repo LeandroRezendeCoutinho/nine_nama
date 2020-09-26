@@ -34,8 +34,7 @@ gem 'money-rails', '~>1.12'
 gem 'rails-i18n', '~> 6.0.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'awesome-pry', '~> 0.0.4'
   gem 'rspec-rails'
 end
 
