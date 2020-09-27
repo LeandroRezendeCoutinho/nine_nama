@@ -18,6 +18,7 @@
   </thead>
 
   <tbody>
+    <% total = 0 %>
     <% @sales.each do |sale| %>
       <tr>
         <td><%= sale.purchaser.name %></td>
@@ -27,8 +28,13 @@
         <td><%= sale.provider.address.street  %></td>
         <td><%= sale.provider.name  %></td>
         <td><%= link_to 'Visualizar', sale %></td>
+        <% total += sale.product.price %>
       </tr>
     <% end %>
+    <tr>
+      <td> Total: </td>
+      <td><%= total %> </td>
+    </tr>
   </tbody>
 </table>
 
