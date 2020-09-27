@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Sale, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should belong_to(:purchaser) }
+    it { should belong_to(:provider) }
+    it { should belong_to(:product) }
+  end
 end
