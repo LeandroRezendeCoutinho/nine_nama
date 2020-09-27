@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install instructions
+Download project
 
-Things you may want to cover:
+### Enter project folder and run commands
+bundle install
 
-* Ruby version
+yarn install
 
-* System dependencies
+rails db:create db:migrate
 
-* Configuration
+## Starting server
+rails s
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Runing tests
+rspec
