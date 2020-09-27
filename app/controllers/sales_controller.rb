@@ -9,7 +9,24 @@ class SalesController < ApplicationController
 
   def show; end
 
-  def import; end
+  def import
+    if request.get?
+      @file = TemporaryFile.new
+    elsif request.post?
+      temp_file = TemporaryFile.new
+      temp_file.bin.attach(file_params[:bin])
+
+      if temp_file.save
+        parsed_file = FileParser.call(temp_file.bin.download)
+        SalesCreator.call(parsed_file)
+
+        temp_file.destroy
+        redirect_to :root
+      else
+        redirect_back fallback_location: import_sales_url
+      end
+    end
+  end
 
   private
 
@@ -19,5 +36,9 @@ class SalesController < ApplicationController
 
   def sale_params
     params.require(:sale).permit(:purchaser_id, :product_id, :quantity, :address_id, :provider_id)
+  end
+
+  def file_params
+    params.require(:temporary_file).permit(:bin)
   end
 end

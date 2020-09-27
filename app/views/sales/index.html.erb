@@ -2,11 +2,14 @@
 
 <h1><%= I18n.t('activerecord.models.sale.other') %></h1>
 
+<%= link_to 'Importar vendas', import_sales_path, method: :get %>
+
 <table>
   <thead>
     <tr>
       <th><%= I18n.t('activerecord.attributes.sale.purchaser_id') %></th>
-      <th><%= I18n.t('activerecord.attributes.sale.product_id') %></th>
+      <th><%= I18n.t('activerecord.attributes.product.description') %></th>
+      <th><%= I18n.t('activerecord.attributes.product.price_cents') %></th>
       <th><%= I18n.t('activerecord.attributes.sale.quantity') %></th>
       <th><%= I18n.t('activerecord.attributes.sale.address_id') %></th>
       <th><%= I18n.t('activerecord.attributes.sale.provider_id') %></th>
@@ -19,6 +22,7 @@
       <tr>
         <td><%= sale.purchaser.name %></td>
         <td><%= sale.product.description %></td>
+        <td><%= sale.product.price %></td>
         <td><%= sale.quantity %></td>
         <td><%= sale.provider.address.street  %></td>
         <td><%= sale.provider.name  %></td>

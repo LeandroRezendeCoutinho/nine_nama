@@ -11,13 +11,20 @@ pt-BR:
       sale:
         one: Venda
         other: Vendas
+      product:
+        one: Produto
+        other: produtos
     attributes:
       sale:
-        purchaser_id: "Comprador"
-        product_id: "Produto"
-        quantity: "Quantidade"
-        address_id: "Endereço"
-        provider_id: "Fornecedor"
+        purchaser_id: Comprador
+        product_id: Produto
+        quantity: Quantidade
+        address_id: Endereço
+        provider_id: Fornecedor
+      product:
+        description: Descrição
+        price_cents: Preço unitário
+        price_currency: Moeda
   date:
     abbr_day_names:
     - dom
