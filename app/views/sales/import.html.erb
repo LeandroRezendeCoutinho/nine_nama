@@ -1,8 +1,30 @@
-<%= form_for(:temporary_file, url: import_sales_path, multipart: true) do |f| %>
-<div class="field">
-  <%= f.file_field(:bin) %>
-</div>
-<div class="field">
-  <%= f.submit('Importar') %>
-</div>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-warning">
+    <%= msg %>
+  </div>
 <% end %>
+
+<div class="d-flex justify-content-center">
+  <div class="flex-column">
+    <div class="shadow p-3 mb-5 bg-white rounded text-center">Importação de vendas</div>
+      <%= form_for(:temporary_file, url: import_sales_path, multipart: true) do |f| %>
+        <div class="form-group">
+          <div class="field">
+            <%= f.file_field(:bin, class: "form-control") %>
+          </div>
+        </div>
+        </br>
+        <div class="form-group">
+          <div class="field">
+            <%= f.submit('Importar', class: "btn btn-primary") %>
+          </div>
+        </div>
+        </br>
+        <div class="form-group">
+          <div class="field">
+            <%= link_to 'Voltar', sales_path %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

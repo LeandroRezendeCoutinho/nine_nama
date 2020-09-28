@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.sale.purchaser_id') %></strong>
-  <%= @sale.provider.name %>
-</p>
+<div class="d-flex justify-content-center">
+<div class="d-flex-column">
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.sale.purchaser_id') %></strong>
+    <%= @sale.provider.name %>
+  </p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.product.description') %></strong>
-  <%= @sale.product.description %>
-</p>
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.product.description') %></strong>
+    <%= @sale.product.description %>
+  </p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.product.price_cents') %></strong>
-  <%= @sale.product.price %>
-</p>
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.product.price_cents') %></strong>
+    <%= @sale.product.price %>
+  </p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.sale.quantity') %></strong>
-  <%= @sale.quantity %>
-</p>
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.sale.quantity') %></strong>
+    <%= @sale.quantity %>
+  </p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.sale.address_id') %></strong>
-  <%= @sale.provider.address.street %>
-</p>
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.sale.address_id') %></strong>
+    <%= @sale.provider.address.street %>
+  </p>
 
-<p>
-  <strong><%= I18n.t('activerecord.attributes.sale.provider_id') %></strong>
-  <%= @sale.provider.name %>
-</p>
+  <p>
+    <strong><%= I18n.t('activerecord.attributes.sale.provider_id') %></strong>
+    <%= @sale.provider.name %>
+  </p>
 
-<%= link_to 'Voltar', sales_path %>
+  <%= link_to 'Voltar', sales_path %>
+</div>
+</div>

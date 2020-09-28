@@ -13,6 +13,8 @@ class SalesController < ApplicationController
     if request.get?
       @file = TemporaryFile.new
     elsif request.post?
+      return flash[:alert] = 'Escolha um arquivo' unless valid_file_params?
+
       temp_file = TemporaryFile.new
       temp_file.bin.attach(file_params[:bin])
 
@@ -40,5 +42,11 @@ class SalesController < ApplicationController
 
   def file_params
     params.require(:temporary_file).permit(:bin)
+  end
+
+  def valid_file_params?
+    file_params.present?
+  rescue ActionController::ParameterMissing
+    false
   end
 end
